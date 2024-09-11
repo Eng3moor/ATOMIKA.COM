@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            font-weight: 900; /* جعل كل النص سميك جدا */
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        .background-filler, .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+        }
+
+        .background-filler {
+            background-color: #3533cd; /* لون أزرق فاتح */
+        }
+
+        .background-image {
+            background-image: url('atooomika.jpg'); /* رابط الصورة */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .header {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            color: #ffffff;
+            background: rgba(0, 0, 0, 0.5); /* خلفية مظللة للعنوان */
+            z-index: 0; /* تأكيد أن العنوان في الأعلى */
+        }
+
+        .container {
+            background-color: rgba(87, 157, 243, 0.9); /* نفس خلفية الصناديق من الصفحة الرئيسية */
+            padding: 20px;
+            border: 1px solid #dddddd;
+            border-radius: 10px; /* زوايا مستديرة */
+            width: 300px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden; /* لمنع الفقاعات من الخروج خارج الصندوق */
+            transition: background-color 0.3s ease;
+            z-index: 1;
+            box-sizing: border-box; /* لضمان احتساب المسافة الإضافية ضمن الأبعاد */
+        }
+
+        .container:hover {
+            background-color: rgba(14, 78, 197, 0.9); /* لون الخلفية عند التمرير */
+        }
+
+        .container::before,
+        .container::after {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background-color: rgba(87, 157, 243, 0.319);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .container::before {
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bubble-down 10s infinite;
+        }
+
+        .container::after {
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bubble-up 10s infinite;
+        }
+
+        @keyframes bubble-up {
+            0% {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+        }
+
+        @keyframes bubble-down {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #ffffff;
+        }
+
+        input {
+            width: calc(100% - 22px); /* لتوفير مسافة مناسبة بين الحواف */
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box; /* لضمان احتساب الحشوة ضمن العرض */
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: #ffffff;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .links {
+            margin-top: 20px;
+        }
+
+        .links a {
+            color: #f0f4f8;
+            text-decoration: none;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-filler"></div>
+    <div class="background-image"></div>
+    <div class="header">
+        <h1>Sign Up</h1>
+    </div>
+    <div class="container">
+        <h1>Sign Up</h1>
+        <form>
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+        <div class="links">
+            <p>Already have an account? <a href="login.html">Login</a></p>
+        </div>
+    </div>
+</body>
+</html>

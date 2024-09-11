@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team BOARD</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-weight: 900;
+            overflow: hidden;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            position: relative;
+            padding-top: 20px;
+        }
+
+        .background-filler {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #3533cd;
+            z-index: -2;
+        }
+
+        .background-image {
+            background-image: url('atooomika.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        h1 {
+            color: #ffffff;
+            margin-top: 50px;
+            transition: color 0.3s ease;
+        }
+
+        h1:hover {
+            color: #859ee8;
+        }
+
+        .content {
+            margin-top: 100px;
+            background-color: rgba(0, 0, 255, 0);
+            z-index: 1;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-height: 80vh; /* حد أقصى للارتفاع */
+            overflow-y: auto; /* شريط التمرير العمودي */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* إضافة ظل لتحسين المظهر */
+        }
+
+        /* Navigation bar on the right */
+        .navbar {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 60px;
+            background-color: rgba(0, 0, 255, 0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 20px 0;
+            font-size: 14px;
+            transform: rotate(-90deg);
+            white-space: nowrap;
+            padding: 10px;
+        }
+
+        .navbar a:hover {
+            color: #ffed07;
+        }
+
+        /* Styles for images */
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px; /* المسافة بين الصور */
+        }
+
+        .image-gallery img {
+            width: 150px; /* عرض الصورة */
+            height: 150px; /* ارتفاع الصورة */
+            object-fit: cover; /* تغطية الصورة دون تشويه */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="background-filler"></div>
+    <div class="background-image"></div>
+
+    <!-- Right Side Navbar -->
+    <div class="navbar">
+        <a href="achievements.html">Achievements</a>
+        <br><br><br>
+        <a href="team.html">Team Members</a>
+        <br><br><br>
+        <a href="partners.html">Partners List</a>
+        <br><br><br>
+        <a href="HOME.html">HOME</a>
+    </div>
+
+    <h1>Team BOARD</h1>
+    <div class="content">
+     
+        <div class="image-gallery">
+            <!-- Add your images here -->
+            <img src="425892894_352201637659395_3189622559979173005_n.jpg" alt="Image 1">
+            <img src="425741103_352201744326051_7873238952232847811_n.jpg" alt="Image 2">
+            <img src="426292446_352201874326038_787885442029805746_n.jpg" alt="Image 3">
+            <img src="425472380_352201900992702_2247944383184276630_n.jpg" alt="Image 4">
+            <img src="426278415_352201960992696_3600204157810856115_n.jpg" alt="Image 5">
+            <img src="426252512_352202004326025_6949208184166646136_n.jpg" alt="Image 6">
+            <img src="426279950_352202037659355_7077636770812779703_n.jpg" alt="Image 7">
+            <img src="425750947_352202080992684_3619151208319586020_n.jpg" alt="Image 8">
+            <img src="426274555_352202107659348_2195420681649963873_n.jpg" alt="Image 9">
+            <img src="425751844_352202127659346_7932810219395958526_n.jpg" alt="Image 10">
+            <img src="426270166_352202147659344_6032963084141314030_n.jpg" alt="Image 11">
+            <img src="425824213_352202190992673_8124798081281291316_n.jpg" alt="Image 12">
+        </div>
+    </div>
+</body>
+</html>

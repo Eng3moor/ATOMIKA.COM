@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fanta website Landing Page</title>
+    <style>
+        @font-face {
+            font-family: Product Sans;
+            src: url(Fonts/Product\ Sans\ Regular.ttf);
+        }
+        @font-face {
+            font-family: Product Sans B;
+            src: url(Fonts/Product\ Sans\ Bold.ttf);
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Product Sans;
+        }
+        html, body{
+            height: 100%;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        #main {
+    background: url('Atomika2.jpg') no-repeat center center fixed;
+    background-size: cover;
+    /* درجة الشفافية */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+
+
+        nav{
+            position: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            height: 10vh;
+            padding: 0vw 10vw;
+            z-index: 99;
+            color: blue;
+            background-color: rgba(8, 8, 237, 0.193);
+        }
+
+        nav a, i {
+    font-size: 1.5vw; /* تكبير الخط */
+    text-decoration: none;
+    color: #fff;
+    font-weight: 900; /* لجعل الخط سميك جدا */
+}
+
+
+        .cntr-nav{
+            display: flex;
+            gap: 3vw;
+        }
+
+        nav i{
+            font-size: 1.5vw;
+        }
+
+        .one{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100vh;
+            background:linear-gradient(150deg, rgb(7, 117, 227), rgb(6, 1, 53));
+           
+        }
+
+        .one h1{
+            font-size: 15vw;
+            font-family: Product Sans B;
+            color: #fff;
+        }
+
+        #fanta{
+            position: absolute;
+            width: 40%;
+            z-index: 2;
+            transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+        }
+
+        #orange-cut{
+            position: absolute;
+            top: 10%;
+            left: 32%;
+            width: 12%;
+            z-index: 1;
+            transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+            
+        }
+
+        #orange{
+            position: absolute;
+            width: 12%;
+            z-index: 3;
+            top: 55%;
+            right: 80%;
+            transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+            transform: rotate(30deg);
+        }
+
+        #leaf{
+            top: 10%;
+            left: 0%;
+            transform: rotate(60deg);
+            position: absolute;
+            width: 12%;
+            transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+        }
+
+        #leaf2{
+            top: 70%;
+            left: 80%;
+            transform: rotate(-90deg);
+            position: absolute;
+            width: 12%;
+            transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+        }
+
+        #leaf3{
+            position: absolute;
+            width: 12%;
+            top: 10%;
+            right: 0%;
+            transform: rotate(100deg);
+        }
+
+        .two{
+            display: flex;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .lft-two, .rght-two{
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            flex-direction: column;
+            gap: 5vh;
+            width: 50%;
+            height: 100%;
+            position: relative;
+            padding: 2vw;
+        }
+
+        .lft-two::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('NN.png') no-repeat center center;
+            background-size: cover;
+            background-color:  rgb(28, 6, 94);
+            
+        }
+
+        .rght-two::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('NN.png') no-repeat center center;
+            background-size: cover;
+           background-color: rgb(28, 6, 94);
+           
+        }
+
+        .rght-two h1, .lft-two h1 {
+            color: #fff;
+            font-size: 5vw;
+            position: relative;
+            z-index: 1;
+        }
+
+        .rght-two p, .lft-two p {
+            font-size: 1vw;
+            color: #fff;
+            width: 80%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .three{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5vw;
+            width: 100%;
+            height: 100vh;
+            background:linear-gradient(150deg,  rgb(21, 4, 98), rgb(48, 100, 231));
+        }
+
+        .card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2vh;
+    width: 25vw;
+    height: 70vh;
+    margin-top: 10vh;
+    border-radius: 20px;
+    background-color: #fff;
+    background: url('I.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+
+        .card h1{
+            margin-top: 40vh;
+            font-size: 3vw;
+        }
+        .card button, .car button {
+    background-color: rgb(0, 94, 255); /* اللون الأساسي للزرار */
+    color: #fff; /* لون النص الأساسي */
+    border: none;
+    border-radius: 50px;
+    padding: 1vw 2vw;
+    font-size: 1vw;
+    transition: background-color 0.3s ease, color 0.3s ease; /* تأثير تدريجي */
+    z-index: 2;
+}
+        .car {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2vh;
+    width: 25vw;
+    height: 70vh;
+    margin-top: 10vh;
+    border-radius: 20px;
+    background-color: #fff;
+    background: url('F.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+
+        .car h1{
+            margin-top: 40vh;
+            font-size: 3vw;
+        }
+
+    
+
+        #cocacola{
+            top: -15%;
+            position: absolute;
+            width: 60%;
+            left: 50%;
+            transform: translate(-50%, 0%);
+            transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+        }
+
+        #pepsi{
+            top: -15%;
+            position: absolute;
+            width: 85%;
+            left: 50%;
+            transform: translate(-50%, 0%);
+            transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+        }
+
+        .lemon{
+            top: -30%;
+            position: absolute;
+            left: 50%;
+            width: 25vw;
+            transform: translate(-50%, 0%);
+            transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+        }
+        .card:hover::after, .car:hover::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(35, 49, 238, 0.558); /* اللون الأزرق الشفاف */
+    border-radius: 20px; /* مطابق لشكل الكاردات */
+    z-index: 1; /* تأكد أنه يظهر فوق المحتوى الداخلي */
+    transition: background-color 0.3s ease; /* تأثير تدريجي */
+}
+
+.card, .car {
+    position: relative; /* ضروري عشان الـ ::after يظهر داخل الكارد */
+    overflow: hidden; /* عشان الشفافية ما تتعداش حدود الكارد */
+}
+
+
+.card button:hover, .car button:hover {
+    background-color: #eff1f4; /* اللون الجديد عند الإشارة */
+    color: #000; /* لون النص عند الإشارة */
+    cursor: pointer;
+    z-index: 2;
+}
+.centered-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh; /* يمكنك تعديل الارتفاع حسب احتياجاتك */
+    text-align: center;
+    background-color: rgb(17, 24, 118); /* خلفية شفافة أو لون حسب رغبتك */
+}
+.centered-text h1 {
+    font-size: 4vw; /* حجم الخط */
+    color: #fff; /* لون الخط الأبيض */
+}
+
+    </style>
+</head>
+<body>
+    <div id="main">
+        <nav>
+            <a href="#">Services guide :</a>
+            <div class="cntr-nav">
+                <a href="#">Home</a>
+                <a href="achievements.html">Achievements</a>
+                <a href="team.html">Team Members</a>
+                <a href="partners.html">Partners List</a>
+                <a href="index.html">ATOMIKA COURSES</a>
+
+            </div>
+            <i class="ri-menu-fill"></i>
+        </nav>
+        <div class="one">
+            <h1></h1>
+            <img decoding="async" id="orange-cut" src="" alt="">
+            <img decoding="async" id="fanta" src="Atomika2.jpg" alt="">
+            <img decoding="async" id="orange" src="M.jpg" alt="">
+            <img decoding="async" id="leaf" src="H.jpg" alt="">
+            <img decoding="async" id="leaf2" src="A.jpg" alt="">
+            <img decoding="async" id="leaf3" src="P.jpg" alt="">
+        </div>
+       
+        <div class="two">
+            <div class="lft-two">
+           
+               
+              
+               
+                <h1></h1>
+              
+            </div>
+            <div class="rght-two">
+             
+            </div>
+        </div>
+        <div class="centered-text">
+            <h1>START TO BE GREAT</h1>
+        </div>
+        <div class="three">
+           
+            
+            <div class="card">
+                <img decoding="async" class="lemon lemon1" src="Assets/lemon.webp" alt="">
+                <img decoding="async" id="cocacola" src="" alt="">
+                <h1></h1>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <button>VISIT NOW </button>
+            </div>
+            <div class="car">
+                <img decoding="async" class="lemon lemon2" src="Assets/lemon.webp" alt="">
+                <img decoding="async" id="pepsi" src="" alt="">
+                <h1></h1>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <button>VISIT NOW</button>
+            </div>
+      
+    </div>
+    
+</body>
+</html>
